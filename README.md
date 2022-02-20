@@ -1,4 +1,38 @@
-# bsv
+# BSV
+
+BSV-js is a general purpose library for building Bitcoin SV applications in
+JavaScript. It was forked from [`moneybutton/bsv`](https://github.com/moneybutton/bsv)
+in February 2022 with the following motivations:
+
+- **Be a better steward of the library**. The BSV js library is mission-critical
+for most BSV apps and services. I don't believe changes are required for the
+sake of making changes, but maintainers must be engaged with developers who use
+their software.
+- **Keep this a pure JavaScript implementation**. [@Firaenix](https://github.com/Firaenix)
+is doing sterling work with [`bsv-wasm`](https://github.com/Firaenix/bsv-wasm) -
+which will blast this library out of the water performance wise. Instead I will
+commit to keeping this a pure JavaScript library and focus on optimising bundle
+size rather than performance.
+- **Forward thinking**. I make no commitment to the legacy v1.x API, instead I
+will maintain the v2.x master branch. Where justified I'll introduce new APIs such
+as the recent [merkle proof standard](https://tsc.bitcoinassociation.net/standards/merkle-proof-standardised-format/)
+and in some cases I'll remove code that isn't used commonly.
+
+Some specific objectives on my TODO list:
+
+- [ ] Improve documentation throughout and publish a dedicated documentation site.
+- [ ] Implement the TSC [merkle proof standard](https://tsc.bitcoinassociation.net/standards/merkle-proof-standardised-format/).
+- [ ] Replace the current `TxBuilder` module with an API based on [`txforge`](https://github.com/libitx/txforge).
+- [ ] Replace the dependency on `bn.js` with native JavaScript BigInts.
+- [ ] Replace the dependency on `bitcoin-elliptic` with a native JavaScript implementation of `secp256k1` (leveraging BigInts).
+- [ ] Strip out any crypto dependencies that can be adequately replaced with
+[SubtleCrypto](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto)
+APIs (and nodejs equivalents).
+- [ ] Something to keep the TypeScript zealots happy.
+
+---
+
+Original readme:
 
 bsv is a javascript library for Bitcoin SV (BSV) intended to satisfy certain
 goals:
